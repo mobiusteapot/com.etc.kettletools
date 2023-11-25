@@ -1,7 +1,7 @@
 {
   "name": "com.etc.kettletools",
-  "displayName": "ETC Package - Kettle Tools",
-  "version": "0.0.1-preview",
+  "displayName": "ETC - Kettle Tools",
+  "version": "0.0.2-preview",
   "unity": "2022.3",
   "description": "WIP tools focused around BVW/ETC Project Development",
   "dependencies": {
