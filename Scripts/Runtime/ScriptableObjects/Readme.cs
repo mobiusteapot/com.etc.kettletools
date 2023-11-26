@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 namespace ETC.KettleTools {
@@ -6,7 +7,7 @@ namespace ETC.KettleTools {
     public class Readme : ScriptableObject {
         public Texture2D icon;
         public string title;
-        public Section[] sections;
+        public List<Section> sections = new List<Section>();
         public bool loadedLayout;
 
         [Serializable]
@@ -18,6 +19,13 @@ namespace ETC.KettleTools {
             title = this.GetType().Name;
         }
 
+        [SerializeField] 
+        private bool isInitalized;
+
+        public bool IsInitalized {
+            get { return isInitalized; }
+            private set { isInitalized = value; }
+        }
         [SerializeField]
         private GUIStyle linkStyle;
         public GUIStyle LinkStyle {
@@ -71,6 +79,7 @@ namespace ETC.KettleTools {
 
             ButtonStyle = new GUIStyle(EditorStyles.miniButton);
             ButtonStyle.fontStyle = FontStyle.Bold;
+            IsInitalized = true;
             EditorUtility.SetDirty(this);
         }
         public bool LinkLabel(GUIContent label, params GUILayoutOption[] options) {

@@ -4,9 +4,11 @@ using UnityEditor;
 namespace ETC.KettleTools {
     public static class ReadmeEditorExtensions {
         public static void DrawReadmeSections(this Readme readme) {
+            if (readme == null || readme.IsInitalized == false) return;
             if (readme.icon != null) {
                 readme.DrawReadmeIconHeader();
             }
+            if(readme.sections.Count <= 0) return;
             foreach (var section in readme.sections) {
                 if (!string.IsNullOrEmpty(section.heading)) {
                     GUILayout.Label(section.heading, readme.HeadingStyle);
