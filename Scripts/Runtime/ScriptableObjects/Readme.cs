@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace ETC.KettleTools {
     [CreateAssetMenu(fileName = "Readme", menuName = "Readme", order = 100)]
     public class Readme : ScriptableObject {
+        // Pragma is neccesary to ensure no readme object data gets included on build in any capacity
+        #if UNITY_EDITOR
         public Texture2D icon;
         public string title;
         public List<Section> sections = new List<Section>();
-        public bool loadedLayout;
 
         [Serializable]
         public class Section {
@@ -19,38 +22,37 @@ namespace ETC.KettleTools {
             title = this.GetType().Name;
         }
 
-        [SerializeField] 
+        [SerializeField, HideInInspector] 
         private bool isInitalized;
-
         public bool IsInitalized {
             get { return isInitalized; }
             private set { isInitalized = value; }
         }
-        [SerializeField]
+        [SerializeField, HideInInspector] 
         private GUIStyle linkStyle;
         public GUIStyle LinkStyle {
             get { return linkStyle; }
             private set { linkStyle = value; }
         }
-        [SerializeField]
+        [SerializeField, HideInInspector] 
         private GUIStyle titleStyle;
         public GUIStyle TitleStyle {
             get { return titleStyle; }
             private set { titleStyle = value; }
         }
-        [SerializeField]
+        [SerializeField, HideInInspector] 
         private GUIStyle headingStyle;
         public GUIStyle HeadingStyle {
             get { return headingStyle; }
             private set { headingStyle = value; }
         }
-        [SerializeField]
+        [SerializeField, HideInInspector] 
         private GUIStyle bodyStyle;
         public GUIStyle BodyStyle {
             get { return bodyStyle; }
             private set { bodyStyle = value; }
         }
-        [SerializeField]
+        [SerializeField, HideInInspector] 
         private GUIStyle buttonStyle;
         public GUIStyle ButtonStyle {
             get { return buttonStyle; }
@@ -95,5 +97,6 @@ namespace ETC.KettleTools {
 
             return GUI.Button(position, label, LinkStyle);
         }
+        #endif
     }
 }

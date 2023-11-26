@@ -10,12 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7e3382aa39c0d94e94a2f4519cc8ac8, type: 3}
-  m_Name: Testing
+  m_Name: DefaultSceneAssetReadme
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  title: Readme
-  sections: []
-  loadedLayout: 0
+  title: Additional Scene Asset Readme
+  sections:
+  - heading: Additional Scene Assets
+    text: This asset stores additional metadata about the scene. Scenes can have
+      a relevant readme attached, which will show on scene open, or when inspecting
+      the scene in the inspector.
+    linkText: 
+    url: 
+  - heading: Changing or Removing this Readme
+    text: You can swap the reference to this readme by selecting the object and selecting
+      your own readme to include. This readme can be disabled by setting the show
+      setting to "Never".
+    linkText: 
+    url: 
   isInitalized: 1
   linkStyle:
     m_Name: ControlLabel

@@ -45,11 +45,11 @@ namespace ETC.KettleTools {
                     SerializedProperty readmeProp = sceneDataObject.FindProperty("readme");
                     SerializedProperty showSceneReadmeProp = sceneDataObject.FindProperty("showSceneReadmeSetting");
                     EditorGUILayout.PropertyField(readmeProp);
-                    EditorGUILayout.PropertyField(showSceneReadmeProp);
+                    EditorGUILayout.PropertyField(showSceneReadmeProp,new GUIContent("Show Readme: "));
                     if (readmeProp.objectReferenceValue != null) {
                         Readme readme = sceneData.readme;
                         SceneReadmeVisibility readmeSetting = sceneData.showSceneReadmeSetting;
-                        if(readmeSetting.HasFlag(SceneReadmeVisibility.showReadmeOnSelect)) {
+                        if(readmeSetting.HasFlag(SceneReadmeVisibility.onAssetSelect)) {
                             readme.DrawReadmeSections();
                         }
                     }

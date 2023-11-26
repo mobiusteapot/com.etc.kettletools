@@ -30,7 +30,7 @@ namespace ETC.KettleTools
             var readme = sceneData.readme;
             if (readme != null) {
                 // If readme is set to show on load, show it
-                if (sceneData.showSceneReadmeSetting.HasFlag(SceneReadmeVisibility.showReadmeOnSceneOpen)) {
+                if (sceneData.showSceneReadmeSetting.HasFlag(SceneReadmeVisibility.onSceneOpen)) {
                     Readme currentSceneReadme = sceneData.readme;
                     Selection.objects = new UnityEngine.Object[] { currentSceneReadme };
                 }
