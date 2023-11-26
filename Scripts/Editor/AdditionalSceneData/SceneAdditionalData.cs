@@ -8,6 +8,6 @@ public class SceneAdditionalData : ScriptableObject {
         [HideInInspector]
         public Readme readme;
         [HideInInspector]
-        public SceneReadmeVisibility showSceneReadmeSetting;
+        public SceneReadmeVisibility showSceneReadmeSetting = SceneReadmeVisibility.onAssetSelect;
     }
 }

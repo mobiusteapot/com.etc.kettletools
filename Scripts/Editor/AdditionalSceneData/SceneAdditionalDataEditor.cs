@@ -13,7 +13,7 @@ namespace ETC.KettleTools
 
         public override void OnInspectorGUI(){
             EditorGUILayout.PropertyField(readmeProp);
-            EditorGUILayout.PropertyField(showSceneReadmeProp);
+            EditorGUILayout.PropertyField(showSceneReadmeProp, new GUIContent("Show Readme: "));
             SerializedProperty iterator = serializedObject.GetIterator();
             if (iterator.NextVisible(true)) {
                 do {

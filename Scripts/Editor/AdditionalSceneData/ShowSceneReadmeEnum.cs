@@ -2,9 +2,9 @@ using System;
 namespace ETC.KettleTools {
     [Flags]
     public enum SceneReadmeVisibility {
-        doNotShowReadme = 0,
-        showReadmeOnSelect = 1 << 0,
-        showReadmeOnSceneOpen = 1 << 1,
-        showReadmeAlways = ~0,
+        never = 0,
+        onAssetSelect = 1 << 0,
+        onSceneOpen = 1 << 1,
+        always = ~0,
     }
 }
